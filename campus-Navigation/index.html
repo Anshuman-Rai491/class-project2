@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Navigator | LPU</title>
+
+    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/map.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+                <h2>Campus Navigator</h2>
+                <p>Lovely Professional University</p>
+            </div>
+        </div>
+
+        
+<nav class="sidebar-nav">
+
+    <a href="#dashboard" class="nav-link active" data-section="dashboard">
+        <i class="fa-solid fa-house"></i> Dashboard
+    </a>
+
+    <a href="#map-section" class="nav-link" data-section="map-section">
+        <i class="fa-solid fa-map"></i> Campus Map
+    </a>
+
+    <a href="#buildings-section" class="nav-link" data-section="buildings-section">
+        <i class="fa-solid fa-building"></i> Buildings
+    </a>
+
+    <a href="#classroom-section" class="nav-link" data-section="classroom-section">
+        <i class="fa-solid fa-door-open"></i> Classroom Finder
+    </a>
+
+    <a href="#navigation-section" class="nav-link" data-section="navigation-section">
+        <i class="fa-solid fa-route"></i> Navigation
+    </a>
+
+    <a href="#facilities-section" class="nav-link" data-section="facilities-section">
+        <i class="fa-solid fa-utensils"></i> Facilities
+    </a>
+
+    <a href="#help-section" class="nav-link" data-section="help-section">
+        <i class="fa-solid fa-circle-question"></i> Help & Support
+    </a>
+
+    <hr>
+
+    <div id="authNavigation">
+
+        <a href="login.html" class="nav-link">
+            <i class="fa-solid fa-right-to-bracket"></i> Login
+        </a>
+
+        <a href="register.html" class="nav-link">
+            <i class="fa-solid fa-user-plus"></i> Register
+        </a>
+
+    </div>
+
+    <div id="userNavigation" style="display: none;">
+
+        <span id="loggedInUser" class="nav-link"></span>
+
+        <a href="#" id="logoutButton" class="nav-link">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+        <div class="sidebar-footer">
+            <p>Made for LPU students</p>
+            <span>Campus Navigator Project</span>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page-section">
+            <header class="topbar">
+                <div>
+                    <h1>Welcome to Campus Navigator</h1>
+                    <p>Find your way around LPU campus easily.</p>
+                </div>
+            </header>
+
+            <div class="welcome-banner">
+                <div>
+                    <h2>Explore Your Campus</h2>
+                    <p>Find buildings, classrooms and important campus facilities.</p>
+                    <a href="#map-section" class="primary-btn">Explore Campus Map</a>
+                </div>
+                <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+
+            <h2 class="section-heading">Quick Access</h2>
+
+            <div class="quick-access-grid">
+                <a href="#map-section" class="quick-card">
+                    <i class="fa-solid fa-map"></i>
+                    <h3>Campus Map</h3>
+                    <p>Explore the campus layout.</p>
+                </a>
+
+                <a href="#buildings-section" class="quick-card">
+                    <i class="fa-solid fa-building"></i>
+                    <h3>Find Buildings</h3>
+                    <p>Search for campus buildings.</p>
+                </a>
+
+                <a href="#classroom-section" class="quick-card">
+                    <i class="fa-solid fa-door-open"></i>
+                    <h3>Classroom Finder</h3>
+                    <p>Find your classroom.</p>
+                </a>
+
+                <a href="#facilities-section" class="quick-card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Campus Facilities</h3>
+                    <p>Explore useful facilities.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- CAMPUS MAP -->
+        <section id="map-section" class="page-section map-section">
+            <div class="page-heading">
+                <h1>Campus Map</h1>
+                <p>Explore the LPU campus map.</p>
+            </div>
+
+            <div class="map-controls">
+                <button id="zoomIn" type="button" title="Zoom in">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button id="zoomOut" type="button" title="Zoom out">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <button id="resetMap" type="button">
+                    <i class="fa-solid fa-rotate-left"></i> Reset
+                </button>
+            </div>
+
+            <div class="campus-image-container" id="mapViewport">
+                <div class="map-content" id="mapContent">
+
+                    <img
+                        src="assets/maps/campus-site-plan.jpg.jpeg"
+                        alt="LPU campus site plan"
+                        id="campusSitePlan"
+                        draggable="false"
+                    >
+
+                    <div class="map-markers">
+                        <!-- Temporary demo markers: positions need verification -->
+                        <button class="building-marker" data-building-id="01"
+                                style="top:12%; left:48%;">01</button>
+
+                        <button class="building-marker" data-building-id="02A"
+                                style="top:23%; left:62%;">02A</button>
+
+                        <button class="building-marker" data-building-id="02B"
+                                style="top:34%; left:42%;">02B</button>
+
+                        <button class="building-marker" data-building-id="08B"
+                                style="top:48%; left:58%;">08B</button>
+
+                        <button class="building-marker" data-building-id="20"
+                                style="top:65%; left:48%;">20</button>
+
+                        <button class="building-marker" data-building-id="33"
+                                style="top:82%; left:55%;">33</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="map-note">
+                Note: Building marker positions are temporary demonstration locations
+                and must be checked against the actual campus map.
+            </p>
+        </section>
+
+        <!-- BUILDING DIRECTORY -->
+        <section id="buildings-section" class="page-section">
+            <div class="page-heading">
+                <h1>Building Directory</h1>
+                <p>Search and explore campus buildings.</p>
+            </div>
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="buildingSearch"
+                       placeholder="Search by building name or number...">
+            </div>
+
+            <div id="buildingGrid" class="building-grid"></div>
+            <div id="buildingDetails"></div>
+        </section>
+
+        <!-- CLASSROOM FINDER -->
+        
+<!-- CLASSROOM FINDER -->
+<section id="classroom-section" class="page-section">
+
+    <div class="page-heading">
+        <h1>Classroom Finder</h1>
+        <p>Find your classroom and explore building floors.</p>
+    </div>
+
+    <!-- CLASSROOM SEARCH -->
+    <div class="content-card">
+        <h2>Search Classroom</h2>
+
+        <label for="classroomSearch">Enter classroom number</label>
+
+        <input
+            type="text"
+            id="classroomSearch"
+            placeholder="Example: B-204"
+        >
+
+        <button id="findClassroom" type="button" class="primary-btn">
+            Find Classroom
+        </button>
+
+        <div id="classroomResult"></div>
+    </div>
+
+    <!-- FLOOR NAVIGATION -->
+    <div class="content-card" style="margin-top: 25px;">
+
+        <h2>Explore Building Floors</h2>
+
+        <p>Select a demo building and floor to see available classrooms.</p>
+
+        <label for="buildingSelect">Select Building</label>
+
+        <select id="buildingSelect">
+            <option value="">Choose a building</option>
+            <option value="DEMO-A">Demo Building A</option>
+            <option value="DEMO-B">Demo Building B</option>
+            <option value="DEMO-C">Demo Building C</option>
+        </select>
+
+        <label for="floorSelect">Select Floor</label>
+
+        <select id="floorSelect" disabled>
+            <option value="">Choose a floor</option>
+        </select>
+
+        <div id="floorClassroomList"></div>
+
+        <p class="demo-warning">
+            These are fictional sample buildings and classrooms,
+            not verified LPU locations.
+        </p>
+
+    </div>
+
+</section>
+
+
+        <!-- NAVIGATION -->
+        <section id="navigation-section" class="page-section">
+            <div class="page-heading">
+                <h1>Navigation</h1>
+                <p>Plan your journey between campus locations.</p>
+            </div>
+
+            <div class="content-card">
+                <label for="startLocation">Starting location</label>
+                <input type="text" id="startLocation"
+                       placeholder="Enter starting location">
+
+                <label for="destinationLocation">Destination</label>
+                <input type="text" id="destinationLocation"
+                       placeholder="Enter destination">
+
+                <button id="findRoute" type="button" class="primary-btn">
+                    Find Route
+                </button>
+
+                <div id="routeResult"></div>
+            </div>
+        </section>
+
+        <!-- FACILITIES -->
+        <section id="facilities-section" class="page-section">
+            <div class="page-heading">
+                <h1>Campus Facilities</h1>
+                <p>Explore useful places around campus.</p>
+            </div>
+
+            <div id="facilitiesGrid" class="quick-access-grid">
+                <div class="quick-card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Food & Cafeteria</h3>
+                    <p>Find food facilities.</p>
+                </div>
+
+                <div class="quick-card">
+                    <i class="fa-solid fa-book"></i>
+                    <h3>Library</h3>
+                    <p>Find library facilities.</p>
+                </div>
+
+                <div class="quick-card">
+                    <i class="fa-solid fa-hospital"></i>
+                    <h3>Medical Help</h3>
+                    <p>Find medical support.</p>
+                </div>
+
+                <div class="quick-card">
+                    <i class="fa-solid fa-landmark"></i>
+                    <h3>Auditorium</h3>
+                    <p>Find auditorium locations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HELP -->
+        <section id="help-section" class="page-section">
+            <div class="page-heading">
+                <h1>Help & Support</h1>
+                <p>Need help finding something on campus?</p>
+            </div>
+
+            <div class="content-card">
+                <h2>Campus Navigation Help</h2>
+                <p>
+                    Use the campus map and building directory to locate
+                    important campus locations.
+                </p>
+                <p>
+                    If a location is missing or incorrect, confirm it with
+                    the relevant university department.
+                </p>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<!-- JavaScript files -->
+<script src="js/script.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/building.js"></script>
+<script src="js/building-directory.js"></script>
+<script src="js/classroom.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
+

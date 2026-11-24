@@ -1,0 +1,43 @@
+
+[
+  {
+    "room": "B-204",
+    "building": "Demo Building B",
+    "buildingId": "DEMO-B",
+    "floor": 2,
+    "category": "Classroom",
+    "isDemo": true
+  },
+  {
+    "room": "A-105",
+    "building": "Demo Building A",
+    "buildingId": "DEMO-A",
+    "floor": 1,
+    "category": "Classroom",
+    "isDemo": true
+  },
+  {
+    "room": "C-301",
+    "building": "Demo Building C",
+    "buildingId": "DEMO-C",
+    "floor": 3,
+    "category": "Laboratory",
+    "isDemo": true
+  },
+  {
+    "room": "B-101",
+    "building": "Demo Building B",
+    "buildingId": "DEMO-B",
+    "floor": 1,
+    "category": "Classroom",
+    "isDemo": true
+  },
+  {
+    "room": "A-202",
+    "building": "Demo Building A",
+    "buildingId": "DEMO-A",
+    "floor": 2,
+    "category": "Classroom",
+    "isDemo": true
+  }
+]

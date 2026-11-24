@@ -1,0 +1,67 @@
+
+/* MAP VIEWPORT */
+#mapViewport {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    background: #e2e8f0;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+}
+
+#mapViewport:active {
+    cursor: grabbing;
+}
+
+/* MAP IMAGE AND MARKERS MOVE TOGETHER */
+.map-content {
+    position: relative;
+    width: 100%;
+    transform-origin: top left;
+    will-change: transform;
+}
+
+#campusSitePlan {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* MARKERS */
+.map-markers {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.building-marker {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    min-width: 38px;
+    height: 38px;
+    padding: 0 5px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 5;
+    box-shadow: 0 2px 8px #00000040;
+    transition: 0.2s;
+}
+
+.building-marker:hover,
+.building-marker.active {
+    background: #f97316;
+    transform: translate(-50%, -50%) scale(1.15);
+}

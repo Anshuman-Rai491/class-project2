@@ -1,0 +1,127 @@
+
+/* =================================
+   DASHBOARD PAGE STYLING
+================================= */
+
+/* Search Section */
+
+.search-section {
+    padding: 5px 0;
+}
+
+.search-section h2 {
+    color: #111827;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+.search-section p {
+    color: #6b7280;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* Search Box Enhancement */
+
+.search-box {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.025);
+    transition: 0.25s ease;
+}
+
+.search-box:focus-within {
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+/* Quick Access Section */
+
+.quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.quick-card {
+    min-height: 165px;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-card h3 {
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.quick-card p {
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.quick-card::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.035);
+    right: -25px;
+    bottom: -25px;
+}
+
+/* Card Hover Effects */
+
+.quick-card:hover .card-icon {
+    transform: scale(1.08);
+}
+
+.card-icon {
+    transition: transform 0.25s ease;
+}
+
+/* Map Section */
+
+.map-section {
+    background: #ffffff;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    color: #111827;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.section-heading p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.view-map-btn {
+    transition: 0.2s ease;
+}
+
+.view-map-btn:hover {
+    background: #dbeafe;
+}
+
+/* Map Container */
+
+#mapViewport {
+    border: none;
+    background: #f1f5f9;
+    min-height: 420px;
+}
+
+/* Responsive Spacing */
+
+@media (max-width: 1200px) {
+    .quick-access-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
